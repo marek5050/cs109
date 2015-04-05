@@ -7,15 +7,6 @@
 from math     import sqrt
 from unittest import main, TestCase
 
-def is_prime (n) :
-    assert n > 0
-    if (n == 1) or ((n % 2) == 0) :
-        return False
-    for i in range(3, int(sqrt(n))) :
-        if (n % i) == 0 :
-            return False
-    return True
-
 class MyUnitTests (TestCase) :
     def test_1 (self) :
         self.assertFalse(is_prime(1))
