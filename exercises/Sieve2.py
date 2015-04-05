@@ -9,7 +9,7 @@ from unittest import main, TestCase
 
 def sieve (n) :
     assert n >= 0
-    a = [True] * (n + 1)
+    a = (n + 1) * [True]
     if n == 0 :
         return a[1:]
     a[1] = False
@@ -19,7 +19,7 @@ def sieve (n) :
     for i in range(4, n + 1, 2) :
         a[i] = False
     for i in range(3, int(sqrt(n)) + 1, 2) :
-        j = i
+        j = 2 * i
         while j <= n :
             a[j]  = False
             j    += i
@@ -55,12 +55,12 @@ class MyUnitTestss (TestCase) :
 
     def test_9 (self) :
         self.assertEqual(sieve(9), [False, True, True, False, True, False, True, False, False])
-"""
+
     def test_10 (self) :
         self.assertEqual(sieve(10), [False, True, True, False, True, False, True, False, False, False])
 
     def test_11 (self) :
         self.assertEqual(sieve(11), [False, True, True, False, True, False, True, False, False, False, True])
-"""
+
 if __name__ == "__main__" :
     main()
