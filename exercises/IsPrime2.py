@@ -4,6 +4,8 @@
 # IsPrime2.py
 # -----------
 
+# https://en.wikipedia.org/wiki/Primality_test
+
 from math     import sqrt
 from unittest import main, TestCase
 
