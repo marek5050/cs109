@@ -37,19 +37,3 @@ class MyUnitTests (TestCase) :
 
 if __name__ == "__main__" :
     main()
-
-""" #pragma: no cover
-coverage3 run --branch IsPrime.py
-.........
-----------------------------------------------------------------------
-Ran 9 tests in 0.000s
-
-OK
-
-
-
-coverage3 report -m
-Name      Stmts   Miss Branch BrMiss  Cover   Missing
------------------------------------------------------
-IsPrime      31      0      6      0   100%
-"""
