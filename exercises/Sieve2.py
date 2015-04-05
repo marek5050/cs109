@@ -8,13 +8,9 @@ from math     import sqrt
 from unittest import main, TestCase
 
 def sieve (n) :
-    assert n >= 0
+    assert n >= 2
     a = (n + 1) * [True]
-    if n == 0 :
-        return a[1:]
     a[1] = False
-    if n == 1 :
-        return a[1:]
     a[2] = True
     for i in range(4, n + 1, 2) :
         a[i] = False
@@ -25,12 +21,6 @@ def sieve (n) :
     return a[1:]
 
 class MyUnitTestss (TestCase) :
-    def test_0 (self) :
-        self.assertEqual(sieve(0), [])
-
-    def test_1 (self) :
-        self.assertEqual(sieve(1), [False])
-
     def test_2 (self) :
         self.assertEqual(sieve(2), [False, True])
 
