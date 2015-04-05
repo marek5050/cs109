@@ -19,8 +19,9 @@ def sieve (n) :
     for i in range(4, n + 1, 2) :
         a[i] = False
     for i in range(3, int(sqrt(n)) + 1, 2) :
-        for j in range(2 * i, n + 1, i) :
-            a[j] = False
+        if a[i] == True :
+            for j in range(i ** 2, n + 1, i) :
+                a[j] = False
     return a[1:]
 
 class MyUnitTestss (TestCase) :
