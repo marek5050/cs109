@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# --------
-# Sieve.py
-# --------
+# ---------
+# Sieve2.py
+# ---------
 
 # https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
@@ -13,7 +13,6 @@ def sieve (n) :
     assert n >= 2
     a = (n + 1) * [True]
     a[1] = False
-    a[2] = True
     for i in range(4, n + 1, 2) :
         a[i] = False
     for i in range(3, int(sqrt(n)) + 1, 2) :
