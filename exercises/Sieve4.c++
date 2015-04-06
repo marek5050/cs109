@@ -4,7 +4,7 @@
 
 // https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-#include <algorithm> // equal
+#include <algorithm> // equal, fill
 #include <cassert>   // assert
 #include <cmath>     // sqrt
 #include <cstddef>   // size_t
@@ -12,84 +12,101 @@
 
 using namespace std;
 
-template <typename RI>
-void sieve (RI b, RI e) {
-    assert((e - b) >= 3);
-    for (int i = 1; i < (e - b); i += 2)
-        b[i] = i;
-    for (int i = 2; i < (e - b); i += 2)
-        b[i] = 2;
-    for (int i = 3; i < (sqrt(e - b - 1) + 1); i += 2)
-        if (b[i])
-            for (int j = (i * i); j < (e - b); j += i)
-                b[j] = i;}
+template <typename T, typename OI>
+void sieve (const T& n, OI x) {
+    assert(n >= 2);
+    for (int i = 1; i < (n + 1); i += 2)
+        x[i] = i;
+    for (int i = 2; i < (n + 1); i += 2)
+        x[i] = 2;
+    for (int i = 3; i < (sqrt(n) + 1); i += 2)
+        if (x[i])
+            for (int j = (i * i); j < (n + 1); j += i)
+                x[j] = i;}
 
 int main () {
     cout << "Sieve4.c++" << endl;
 
-    int b[12] = {1, 2, 3, 2, 5, 2, 7, 2, 3, 2, 11};
+    const int a[12] = {1, 2, 3, 2, 5, 2, 7, 2, 3, 2, 11};
 
     {
-    const size_t s = 3;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 2;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     {
-    const size_t s = 4;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 3;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     {
-    const size_t s = 5;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 4;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     {
-    const size_t s = 6;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 5;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     {
-    const size_t s = 7;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 6;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     {
-    const size_t s = 8;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 7;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     {
-    const size_t s = 9;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 8;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     {
-    const size_t s = 10;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 9;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     {
-    const size_t s = 11;
-          int    a[s];
-    sieve(a, a + s);
-    assert(equal(a + 1, a + s, b));
+    const int    n = 10;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
+    }
+
+    {
+    const int    n = 11;
+    const size_t s = n + 1;
+          int    x[s];
+    sieve(n, x);
+    assert(equal(x + 1, x + s, a));
     }
 
     cout << "Done." << endl;
