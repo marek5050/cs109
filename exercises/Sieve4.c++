@@ -1,10 +1,10 @@
 // ----------
-// Sieve2.c++
+// Sieve4.c++
 // ----------
 
 // https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-#include <algorithm> // equal, fill
+#include <algorithm> // equal
 #include <cassert>   // assert
 #include <cmath>     // sqrt
 #include <cstddef>   // size_t
@@ -15,79 +15,79 @@ using namespace std;
 template <typename RI>
 void sieve (RI b, RI e) {
     assert((e - b) >= 3);
-    fill(b, e, true);
-    b[1] = false;
-    for (int i = 4; i < (e - b); i += 2)
-        b[i] = false;
+    for (int i = 1; i < (e - b); i += 2)
+        b[i] = i;
+    for (int i = 2; i < (e - b); i += 2)
+        b[i] = 2;
     for (int i = 3; i < (sqrt(e - b - 1) + 1); i += 2)
         if (b[i])
             for (int j = (i * i); j < (e - b); j += i)
-                b[j] = false;}
+                b[j] = i;}
 
 int main () {
-    cout << "Sieve2.c++" << endl;
+    cout << "Sieve4.c++" << endl;
 
-    int b[12] = {false, true, true, false, true, false, true, false, false, false, true};
+    int b[12] = {1, 2, 3, 2, 5, 2, 7, 2, 3, 2, 11};
 
     {
     const size_t s = 3;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
 
     {
     const size_t s = 4;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
 
     {
     const size_t s = 5;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
 
     {
     const size_t s = 6;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
 
     {
     const size_t s = 7;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
 
     {
     const size_t s = 8;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
 
     {
     const size_t s = 9;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
 
     {
     const size_t s = 10;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
 
     {
     const size_t s = 11;
-          bool   a[s];
+          int    a[s];
     sieve(a, a + s);
     assert(equal(a + 1, a + s, b));
     }
