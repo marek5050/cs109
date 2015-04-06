@@ -17,7 +17,7 @@ def sieve (n) :
         a[i] = False
     for i in range(3, int(sqrt(n)) + 1, 2) :
         if a[i] :
-            for j in range(i ** 2, n + 1, i) :
+            for j in range(i ** 2, n + 1, 2 * i) :
                 a[j] = False
     return a[1:]
 

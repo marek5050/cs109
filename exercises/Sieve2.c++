@@ -21,7 +21,7 @@ void sieve (const T& n, OI x) {
         x[i] = false;
     for (int i = 3; i < (sqrt(n) + 1); i += 2)
         if (x[i])
-            for (int j = (i * i); j < (n + 1); j += i)
+            for (int j = (i * i); j < (n + 1); j += (2 * i))
                 x[j] = false;}
 
 int main () {
