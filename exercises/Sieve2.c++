@@ -26,7 +26,7 @@ void sieve (RI b, RI e) {
                 *q = false;}}
 
 int main () {
-    cout << "Sieve.c++" << endl;
+    cout << "Sieve2.c++" << endl;
 
     int b[12] = {false, true, true, false, true, false, true, false, false, false, true};
 
