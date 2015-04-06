@@ -11,15 +11,15 @@ from unittest import main, TestCase
 
 def sieve (n) :
     assert n >= 2
-    a = (n + 1) * [True]
-    a[1] = False
+    x = (n + 1) * [True]
+    x[1] = False
     for i in range(4, n + 1, 2) :
-        a[i] = False
+        x[i] = False
     for i in range(3, int(sqrt(n)) + 1, 2) :
-        if a[i] :
+        if x[i] :
             for j in range(i ** 2, n + 1, 2 * i) :
-                a[j] = False
-    return a
+                x[j] = False
+    return x
 
 class MyUnitTestss (TestCase) :
     def setUp (self) :
