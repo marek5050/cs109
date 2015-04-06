@@ -17,7 +17,6 @@ void sieve (RI b, RI e) {
     assert((e - b) >= 3);
     fill(b, e, true);
     b[1] = false;
-    b[2] = true;
     for (RI p = b + 4; p < e; p += 2)
         *p = false;
     for (RI p = b + 3; p < (b + static_cast<int>(sqrt(e - b - 1)) + 1); p += 2)
