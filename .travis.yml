@@ -12,6 +12,6 @@ install:
     - sudo apt-get install g++-4.8
 
 script:
-    - cd exercises
+    - cd c++
     - make
     - make test
