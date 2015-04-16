@@ -19,7 +19,6 @@ install:
 
 script:
     - cd c++
-    - make
     - make test
     - cd -
     - cd python

@@ -30,7 +30,7 @@ clean:
 	rm -f Sieve2
 	rm -f Sieve4
 
-test:
+test: all
 	./BinarySearch
 	./BinarySearch2
 	./BinarySearch3
