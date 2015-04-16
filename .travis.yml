@@ -1,6 +1,9 @@
 language: cpp
 
 compiler:
-  - gcc
+    - gcc
 
-script: cd exercises && make && make test
+script:
+    - cd exercises
+    - make
+    - make test
