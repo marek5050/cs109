@@ -48,7 +48,7 @@ pull:
 	../../exercises/python/ python
 
 push:
-	(cd c++; make clean)
+	cd c++; make clean
 	git add c++
 	(cd python; make clean)
 	git add python
