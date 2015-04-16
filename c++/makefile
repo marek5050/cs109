@@ -1,41 +1,42 @@
-%: %.c++
-#	g++     -pedantic -std=c++11 -Wall $< -o $@ /usr/local/lib/gtest_main.a
-	g++-4.8 -pedantic -std=c++11 -Wall $< -o $@ -lgtest -lgtest_main -pthread
+CXX := g++ -pedantic -std=c++11 -Wall
 
-all: BinarySearch  \
-     BinarySearch2 \
-     BinarySearch3 \
-     GCD           \
-     GCD2          \
-     IsPrime2      \
-     LowerBound    \
-     LowerBound2   \
-     LowerBound3   \
-     Sieve2        \
-     Sieve4
+ifeq ($(shell uname), Darwin)
+	LIB      := /usr/local/lib/gtest_main.a
+	VALGRIND :=
+else
+	LIB      := -lgtest -lgtest_main -pthread
+	VALGRIND := valgrind
+endif
+
+.PRECIOUS: %.app
+
+%.app: %.c++
+	$(CXX) $< -o $@ $(LIB)
+
+all: BinarySearch.app  \
+     BinarySearch2.app \
+     BinarySearch3.app \
+     GCD.app           \
+     GCD2.app          \
+     IsPrime2.app      \
+     LowerBound.app    \
+     LowerBound2.app   \
+     LowerBound3.app   \
+     Sieve2.app        \
+     Sieve4.app
 
 clean:
-	rm -f BinarySearch
-	rm -f BinarySearch2
-	rm -f BinarySearch3
-	rm -f GCD
-	rm -f GCD2
-	rm -f IsPrime2
-	rm -f LowerBound
-	rm -f LowerBound2
-	rm -f LowerBound3
-	rm -f Sieve2
-	rm -f Sieve4
+	rm -f *.app
 
 test: all
-	./BinarySearch
-	./BinarySearch2
-	./BinarySearch3
-	./GCD
-	./GCD2
-	./IsPrime2
-	./LowerBound
-	./LowerBound2
-	./LowerBound3
-	./Sieve2
-	./Sieve4
+	./BinarySearch.app
+	./BinarySearch2.app
+	./BinarySearch3.app
+	./GCD.app
+	./GCD2.app
+	./IsPrime2.app
+	./LowerBound.app
+	./LowerBound2.app
+	./LowerBound3.app
+	./Sieve2.app
+	./Sieve4.app
