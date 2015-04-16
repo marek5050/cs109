@@ -1,7 +1,7 @@
-language: cpp
+language: python
 
-compiler:
-    - gcc
+python:
+    - "3.4"
 
 before_install:
     # https://github.com/beark/ftl/blob/master/.travis.yml
@@ -23,3 +23,7 @@ script:
     - cd c++
     - make
     - make test
+    - cd -
+    - cd python
+    - make test
+
