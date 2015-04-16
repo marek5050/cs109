@@ -1,15 +1,13 @@
-// --------
-// Test.c++
-// --------
-
+// ---------
+// Test1.c++
+// ---------
 
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
 
+#include <gtest/gtest.h>
+
 using namespace std;
 
-int main () {
-    cout << "Test.c++" << endl;
-
-    cout << "Done." << endl;
-    return 0;}
+TEST(MyUnitTests, test_1) {
+    ASSERT_EQ(2, 2);}

@@ -5,13 +5,9 @@
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
 
+#include <gtest/gtest.h>
+
 using namespace std;
 
-int main () {
-    cout << "Test2.c++" << endl;
-
-    auto i = 2;
-    assert(i == 2);
-
-    cout << "Done." << endl;
-    return 0;}
+TEST(MyUnitTests, test_1) {
+    ASSERT_EQ(2, 2);}

@@ -26,4 +26,3 @@ script:
     - cd -
     - cd python
     - make test
-
