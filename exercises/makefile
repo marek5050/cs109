@@ -1,10 +1,12 @@
 %: %.c++
-	g++ -pedantic -std=c++11 -Wall $< -o $@ $(LIB)
+	g++ -pedantic -std=c++11 -Wall $< -o $@
 
-all: Test Test2
-	Test
-	Test2
+all: Test1 Test2
 
 clean:
-	rm -f Test
+	rm -f Test1
 	rm -f Test2
+
+test:
+	Test1
+	Test2

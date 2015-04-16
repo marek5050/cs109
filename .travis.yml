@@ -3,4 +3,4 @@ language: cpp
 compiler:
   - gcc
 
-script: cd exercises && make
+script: cd exercises && make && make test
