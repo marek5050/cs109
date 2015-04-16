@@ -1,5 +1,5 @@
 %: %.c++
-	g++ -pedantic -Wall $< -o $@
+	g++ -pedantic -std=c++11 -Wall $< -o $@
 
 all: Test1 Test2
 
