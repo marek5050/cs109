@@ -8,7 +8,7 @@ from unittest import main, TestCase
 
 class MyUnitTestss (TestCase) :
     def test (self) :
-        self.assertEqual(2, 2)
+        self.assertEqual(2, 3)
 
 if __name__ == "__main__" :
     main()
