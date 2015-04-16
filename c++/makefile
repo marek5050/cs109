@@ -15,9 +15,6 @@ all: BinarySearch  \
      Sieve4
 
 clean:
-	rm -f *.gcda
-	rm -f *.gcno
-	rm -f *.gcov
 	rm -f BinarySearch
 	rm -f BinarySearch2
 	rm -f BinarySearch3

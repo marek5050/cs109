@@ -49,11 +49,11 @@ pull:
 
 push:
 	cd c++; make clean
-	git add c++
 	cd python; make clean
-	git add python
 	git add .travis.yml
+	git add c++
 	git add makefile
+	git add python
 	git commit -m "another commit"
 	git push
 	git status
