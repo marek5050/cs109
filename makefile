@@ -28,7 +28,7 @@ pull:
 	--include "Sieve3.c++"                  \
 	--include "Sieve4.c++"                  \
 	--exclude "*"                           \
-	../../exercises/c++/ exercises
+	../../exercises/c++/ c++
 	@rsync -r -t -u -v --delete             \
 	--include "BinarySearch.py"             \
 	--include "BinarySearch2.py"            \
@@ -45,10 +45,11 @@ pull:
 	--include "Sieve3.py"                   \
 	--include "Sieve4.py"                   \
 	--exclude "*"                           \
-	../../exercises/python/ exercises
+	../../exercises/python/ python
 
 push:
-	git add exercises
+	git add c++
+	git add python
 	git add .travis.yml
 	git add makefile
 	git commit -m "another commit"
