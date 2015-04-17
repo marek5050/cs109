@@ -1,9 +1,9 @@
-CXX := g++ -pedantic -std=c++11 -Wall
-
 ifeq ($(shell uname), Darwin)
+	CXX      := g++ -pedantic -std=c++11 -Wall
 	LIB      := /usr/local/lib/gtest_main.a
 	VALGRIND :=
 else
+	CXX      := g++-4.8 -pedantic -std=c++11 -Wall
 	LIB      := -lgtest -lgtest_main -pthread
 	VALGRIND := valgrind
 endif
