@@ -1,3 +1,5 @@
+.PRECIOUS: %.app
+
 ifeq ($(shell uname), Darwin)
 	CXX      := g++ -pedantic -std=c++11 -Wall
 	LIB      := /usr/local/lib/gtest_main.a
@@ -7,8 +9,6 @@ else
 	LIB      := -lgtest -lgtest_main -pthread
 	VALGRIND := valgrind
 endif
-
-.PRECIOUS: %.app
 
 %.app: %.c++
 	$(CXX) $< -o $@ $(LIB)
