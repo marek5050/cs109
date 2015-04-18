@@ -1,5 +1,3 @@
-.PRECIOUS: %.app
-
 ifeq ($(shell uname), Darwin)
 	CXX      := g++ -pedantic -std=c++11 -Wall
 	LIB      := /usr/local/lib/gtest_main.a
