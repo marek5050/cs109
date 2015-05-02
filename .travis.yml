@@ -21,6 +21,7 @@ install:
     - cd -
     - sudo apt-get install python-numpy
     - sudo apt-get install valgrind
+    - valgrind --version
 
 script:
     - cd c++
