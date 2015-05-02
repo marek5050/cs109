@@ -5,17 +5,9 @@
 // https://en.wikipedia.org/wiki/Primality_test
 
 #include <cassert>  // assert
-#include <cmath>    // sqrt
 #include <iostream> // cout, endl
 
-bool is_prime (int n) {
-    assert(n > 0);
-    if ((n == 1) || ((n % 2) == 0))
-        return n == 2;
-    for (int i = 3; i <= sqrt(n); i += 2)
-        if ((n % i) == 0)
-            return false;
-    return true;}
+#include "IsPrime2.h"
 
 int main () {
     using namespace std;
@@ -33,3 +25,19 @@ int main () {
 
     cout << "Done." << endl;
     return 0;}
+
+/*
+% IsPrime2
+IsPrime2.c++
+Done.
+
+
+
+% gcov -b IsPrime2.c++ | grep -A 5 "File 'IsPrime2.c++'"
+File 'IsPrime2.c++'
+Lines executed:100.00% of 19
+Branches executed:100.00% of 28
+Taken at least once:64.29% of 28
+No calls
+IsPrime2.c++:creating 'IsPrime2.c++.gcov'
+*/

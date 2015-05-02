@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
-# ----------
-# IsPrime.py
-# ----------
+# ------------
+# IsPrime1T.py
+# ------------
 
 # https://en.wikipedia.org/wiki/Primality_test
 
 from math     import sqrt
 from unittest import main, TestCase
+
+from IsPrime1 import is_prime
 
 class MyUnitTests (TestCase) :
     def test_1 (self) :
@@ -39,3 +41,22 @@ class MyUnitTests (TestCase) :
 
 if __name__ == "__main__" :
     main()
+
+""" #pragma: no cover
+% coverage run --branch IsPrime1.py
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK
+
+
+
+% coverage report -m
+Name        Stmts   Miss Branch BrMiss  Cover   Missing
+-------------------------------------------------------
+IsPrime1        9      0      6      0   100%
+IsPrime1T      24      0      0      0   100%
+-------------------------------------------------------
+TOTAL          33      0      6      0   100%
+"""

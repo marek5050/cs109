@@ -13,37 +13,45 @@ init:
 
 pull:
 	@rsync -r -t -u -v --delete             \
-	--include "BinarySearch.c++"            \
-	--include "BinarySearch2.c++"           \
-	--include "BinarySearch3.c++"           \
-	--include "LowerBound.c++"              \
+	--include "LowerBound1.h"               \
+	--include "LowerBound1.c++"             \
+	--include "LowerBound2.h"               \
 	--include "LowerBound2.c++"             \
-	--include "LowerBound3.c++"             \
+	--include "BinarySearch1.h"             \
+	--include "BinarySearch1.c++"           \
+	--include "BinarySearch2.h"             \
+	--include "BinarySearch2.c++"           \
+	--include "GCD.h"                       \
 	--include "GCD.c++"                     \
-	--include "GCD2.c++"                    \
-	--include "IsPrime.c++"                 \
+	--include "IsPrime1.h"                  \
+	--include "IsPrime1.c++"                \
+	--include "IsPrime2.h"                  \
 	--include "IsPrime2.c++"                \
-	--include "Sieve.c++"                   \
+	--include "Sieve1.h"                    \
+	--include "Sieve1.c++"                  \
+	--include "Sieve2.h"                    \
 	--include "Sieve2.c++"                  \
-	--include "Sieve3.c++"                  \
-	--include "Sieve4.c++"                  \
 	--exclude "*"                           \
 	../../exercises/c++/ c++
 	@rsync -r -t -u -v --delete             \
-	--include "BinarySearch.py"             \
-	--include "BinarySearch2.py"            \
-	--include "BinarySearch3.py"            \
-	--include "LowerBound.py"               \
+	--include "LowerBound1.py"              \
+	--include "LowerBound1T.py"             \
 	--include "LowerBound2.py"              \
-	--include "LowerBound3.py"              \
+	--include "LowerBound2T.py"             \
+	--include "BinarySearch1.py"            \
+	--include "BinarySearch1T.py"           \
+	--include "BinarySearch2.py"            \
+	--include "BinarySearch2T.py"           \
 	--include "GCD.py"                      \
-	--include "GCD2.py"                     \
-	--include "IsPrime.py"                  \
+	--include "GCDT.py"                     \
+	--include "IsPrime1.py"                 \
+	--include "IsPrime1T.py"                \
 	--include "IsPrime2.py"                 \
-	--include "Sieve.py"                    \
+	--include "IsPrime2T.py"                \
+	--include "Sieve1.py"                   \
+	--include "Sieve1T.py"                  \
 	--include "Sieve2.py"                   \
-	--include "Sieve3.py"                   \
-	--include "Sieve4.py"                   \
+	--include "Sieve2T.py"                  \
 	--exclude "*"                           \
 	../../exercises/python/ python
 

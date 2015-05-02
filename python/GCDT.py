@@ -1,23 +1,15 @@
 #!/usr/bin/env python
 
 # -------
-# GCD2.py
+# GCDT.py
 # -------
+
+# https://docs.python.org/3.4/library/fractions.html
 
 from fractions import gcd
 from unittest  import main, TestCase
 
-def gcd_recursion (m, n) :
-    assert (m >= 0) and (n >= 0)
-    if m == 0 :
-        return n
-    return gcd(n % m, m)
-
-def gcd_iteration (m, n) :
-    assert (m >= 0) and (n >= 0)
-    while m != 0 :
-        m, n = n % m, m
-    return n
+from GCD import gcd_iteration, gcd_recursion
 
 def bind (f) :
     class MyUnitTests (TestCase) :

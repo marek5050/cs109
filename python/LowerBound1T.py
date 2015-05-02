@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 
-# -------------
-# LowerBound.py
-# -------------
+# ---------------
+# LowerBound1T.py
+# ---------------
+
+// https://docs.python.org/3.4/library/bisect.html
+// http://docs.scipy.org/doc/numpy/reference/generated/numpy.searchsorted.html
 
 from bisect   import bisect_left
 from numpy    import searchsorted
 from unittest import main, TestCase
+
+from LowerBound1 import lower_bound_iteration, lower_bound_recursion
 
 def bind (f) :
     class MyUnitTests (TestCase) :
@@ -36,8 +41,10 @@ def bind (f) :
 
     return MyUnitTests
 
-bisect_tests       = bind(bisect_left)
-searchsorted_tests = bind(searchsorted)
+lower_bound_recursion_tests = bind(lower_bound_recursion)
+lower_bound_iteration_tests = bind(lower_bound_iteration)
+bisect_tests                = bind(bisect_left)
+searchsorted_tests          = bind(searchsorted)
 
 if __name__ == "__main__" :
     main()

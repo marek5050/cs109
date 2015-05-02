@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 
-# ---------
-# Sieve3.py
-# ---------
+# ----------
+# Sieve1T.py
+# ----------
 
 # https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-from math     import sqrt
 from unittest import main, TestCase
+
+from Sieve1 import sieve
 
 class MyUnitTestss (TestCase) :
     def setUp (self) :
-        self.a = [1, 2, 3, 2, 5, 2, 7, 2, 3, 2, 11]
+        self.a = [False, True, True, False, True, False, True, False, False, False, True]
 
     def test_2 (self) :
         self.assertEqual(sieve(2)[1:], self.a[:2])
