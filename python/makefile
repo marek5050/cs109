@@ -1,3 +1,12 @@
+cs:
+	make clean
+	@echo `pwd`
+	@rsync -r -t -u -v --delete      \
+	--include "*.py"                 \
+	--include "makefile"             \
+	--exclude "*"                    \
+	. downing@$(CS):cs/cs109/python/
+
 FILES :=          \
     LowerBound1   \
     LowerBound2   \

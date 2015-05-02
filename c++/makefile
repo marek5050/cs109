@@ -1,3 +1,13 @@
+cs:
+	make clean
+	@echo `pwd`
+	@rsync -r -t -u -v --delete   \
+	--include "makefile"          \
+	--include "*.c++"             \
+	--include "*.h"               \
+	--exclude "*"                 \
+	. downing@$(CS):cs/cs109/c++/
+
 ifeq ($(shell uname), Darwin)
     CXX      := g++ -fprofile-arcs -ftest-coverage -pedantic -std=c++11 -Wall
     GCOV     := gcov -b
