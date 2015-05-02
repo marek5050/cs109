@@ -13,10 +13,10 @@ FILES :=          \
     BinarySearch1 \
     BinarySearch2 \
     GCD           \
-    GCD2          \
+    IsPrime1      \
     IsPrime2      \
-    Sieve2        \
-    Sieve4
+    Sieve1        \
+    Sieve2
 
 all:
 
