@@ -4,8 +4,8 @@
 # LowerBound1T.py
 # ---------------
 
-// https://docs.python.org/3.4/library/bisect.html
-// http://docs.scipy.org/doc/numpy/reference/generated/numpy.searchsorted.html
+# https://docs.python.org/3.4/library/bisect.html
+# http://docs.scipy.org/doc/numpy/reference/generated/numpy.searchsorted.html
 
 from bisect   import bisect_left
 from numpy    import searchsorted
