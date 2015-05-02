@@ -8,7 +8,7 @@ before_install:
     - sudo apt-get update
 
 install:
-	- uname
+    - uname
     - pip install --upgrade pip
     - pip install coverage
     - sudo apt-get install g++-4.8
