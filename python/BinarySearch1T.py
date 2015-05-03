@@ -26,7 +26,7 @@ def bind (f) :
         def test_2 (self) :
             self.assertFalse(f(self.a, 2))
 
-        def test_2 (self) :
+        def test_3 (self) :
             self.assertTrue (f(self.a, 3))
 
         def test_4 (self) :
