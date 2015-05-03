@@ -26,7 +26,7 @@ endif
 	$(CXX) $< -o $@ $(LIB)
 
 %.c++.gcov: %.app
-	$(VALGRIND) $<
+	$(VALGRIND) ./$<
 	-$(GCOV) $(<:.app=.c++) | grep -A 5 "File './$(<:.app=.h)'"
 	$(GCOV) $(<:.app=.c++) | grep -A 5 "File '$(<:.app=.c++)'"
 
