@@ -7,16 +7,16 @@ cs:
 	--exclude "*"                    \
 	. downing@$(CS):cs/cs109/python/
 
-FILES :=          \
-    LowerBound1   \
-    LowerBound2   \
-    BinarySearch1 \
-    BinarySearch2 \
-    GCD           \
-    IsPrime1      \
-    IsPrime2      \
-    Sieve1        \
-    Sieve2
+FILES :=           \
+    LowerBound1T   \
+    LowerBound2T   \
+    BinarySearch1T \
+    BinarySearch2T \
+    GCDT           \
+    IsPrime1T      \
+    IsPrime2T      \
+    Sieve1T        \
+    Sieve2T
 
 all:
 
