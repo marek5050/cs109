@@ -8,29 +8,51 @@
 #include <cassert>   // assert
 #include <iostream>  // cout, endl
 
+#include "gtest/gtest.h"
+
 #include "LowerBound1.h"
 
 using namespace std;
 
-template <typename F>
-void test (F f) {
-    const int    a[] = {1, 3, 3, 5};
-    const size_t s   = sizeof(a) / sizeof(a[0]);
+using testing::TestWithParam;
+using testing::Values;
 
-    assert(f(a, a + s, 0) == a);
-    assert(f(a, a + s, 1) == a);
-    assert(f(a, a + s, 2) == a + 1);
-    assert(f(a, a + s, 3) == a + 1);
-    assert(f(a, a + s, 4) == a + 3);
-    assert(f(a, a + s, 5) == a + 3);
-    assert(f(a, a + s, 6) == a + 4);}
+typedef const int* (*F)(const int*, const int*, const int&);
 
-int main () {
-    cout << "LowerBound.c++" << endl;
+struct LowerBoundFixture : TestWithParam<F> {
+    const int    _a[4];
+    const size_t _s;
 
-    test(lower_bound_recursion<const int*, int>);
-    test(lower_bound_iteration<const int*, int>);
-    test(lower_bound          <const int*, int>);
+    LowerBoundFixture () :
+            _a {1, 3, 3, 5},
+            _s (sizeof(_a) / sizeof(_a[0]))
+        {}};
 
-    cout << "Done." << endl;
-    return 0;}
+INSTANTIATE_TEST_CASE_P(
+            LowerBoundInstantiation,
+ 			LowerBoundFixture,
+ 			Values(
+ 			    lower_bound_recursion<const int*, int>,
+ 			    lower_bound_iteration<const int*, int>,
+ 			    lower_bound          <const int*, int>));
+
+TEST_P(LowerBoundFixture, test_0) {
+	ASSERT_EQ(GetParam()(_a, _a + _s, 0), _a);}
+
+TEST_P(LowerBoundFixture, test_1) {
+	ASSERT_EQ(GetParam()(_a, _a + _s, 1), _a);}
+
+TEST_P(LowerBoundFixture, test_2) {
+	ASSERT_EQ(GetParam()(_a, _a + _s, 2), _a + 1);}
+
+TEST_P(LowerBoundFixture, test_3) {
+	ASSERT_EQ(GetParam()(_a, _a + _s, 3), _a + 1);}
+
+TEST_P(LowerBoundFixture, test_4) {
+	ASSERT_EQ(GetParam()(_a, _a + _s, 4), _a + 3);}
+
+TEST_P(LowerBoundFixture, test_5) {
+	ASSERT_EQ(GetParam()(_a, _a + _s, 5), _a + 3);}
+
+TEST_P(LowerBoundFixture, test_6) {
+	ASSERT_EQ(GetParam()(_a, _a + _s, 6), _a + 4);}
